@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/userapi/demo-api/demo-api.iml" filepath="$PROJECT_DIR$/userapi/demo-api/demo-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userapi/demo-impl/demo-impl.iml" filepath="$PROJECT_DIR$/userapi/demo-impl/demo-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lagom-java-maven.iml" filepath="$PROJECT_DIR$/.idea/lagom-java-maven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userapi/userapi.iml" filepath="$PROJECT_DIR$/userapi/userapi.iml" />
+    </modules>
+  </component>
+</project>
