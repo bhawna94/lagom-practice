@@ -14,23 +14,24 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionStage;
+import java.util.function.Function;
 
 public class DemoServiceImpl implements DemoService {
 
     private static List<UserInfo> userDetails = new ArrayList<>();
     private final CassandraSession cassandraSession;
 
-    private  Pair<ResponseHeader, UserInfo> concatHeader(ResponseHeader responseHeader, String id) {
-        CompletionStage<UserInfo> user = cassandraSession.selectOne("select * from user.userdetail where user_id =?",id).thenApply(
+    private Pair<ResponseHeader, String> concatHeader(ResponseHeader responseHeader, String id) {
+       /* CompletableFuture<UserInfo> user = cassandraSession.selectOne("select * from user.userdetail where user_id =?", id).thenApply(
                 row -> (UserInfo.builder().userName(row.get().getString("username"))
                         .qualification(row.get().getString("qualification"))
                         .trackAssigned(row.get().getString("trackassigned")).build()
-                ));
-
-               user.
-        return Pair.create(responseHeader, );
+                ));*/
+        cassandraSession.selectOne("select * from user.userdetail where user_id =?", id).thenApply(Function.identity());
+        System.out.println("------"+cassandraSession.selectOne("select * from user.userdetail where user_id =?", id).thenApply(return Function.identity()));
+        return Pair.create(responseHeader, "ayush" );
     }
+
     @Inject
     public DemoServiceImpl(CassandraSession cassandraSession) {
         this.cassandraSession = cassandraSession;
@@ -73,7 +74,7 @@ public class DemoServiceImpl implements DemoService {
             String id = requestHeader.getHeader("id").get();
 
 
-            return CompletableFuture.completedFuture(concatHeader(ResponseHeader.OK.withStatus(200),id));
+            return CompletableFuture.completedFuture(concatHeader(ResponseHeader.OK.withStatus(200), id));
 
         };
 
