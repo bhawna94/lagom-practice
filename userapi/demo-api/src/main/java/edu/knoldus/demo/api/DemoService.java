@@ -14,9 +14,10 @@ import static com.lightbend.lagom.javadsl.api.transport.Method.GET;
 
 public interface DemoService extends Service {
 
-    ServiceCall<UserInfo, List<UserInfo>> addUser();
+    ServiceCall<UserInfo,String > addUser();
     ServiceCall<NotUsed,List<UserInfo>> getUser(int id);
-    ServiceCall<NotUsed,List<UserInfo>> deleteUser(int id);
+    ServiceCall<NotUsed,String> deleteUser(int id);
+    ServiceCall<NotUsed,String> getUserHeaderCall();
 
     @Override
     default Descriptor descriptor() {
@@ -24,7 +25,9 @@ public interface DemoService extends Service {
         return named("demo").withCalls(
                 Service.restCall(POST, "/api/demo", this::addUser),
                 Service.restCall(GET,"/api/getDemo/:id", this::getUser),
-                Service.restCall(DELETE,"/api/deleteDemo/:id",this::deleteUser)
+                Service.restCall(DELETE,"/api/deleteDemo/:id",this::deleteUser),
+                Service.restCall(GET,"/api/getHeader",this::getUserHeaderCall)
+
                 //Service.restCall(PUT,)
         ).withAutoAcl(true);
     }

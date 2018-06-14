@@ -25,6 +25,13 @@
                 <groupId>com.lightbend.lagom</groupId>
                 <artifactId>lagom-maven-plugin</artifactId>
                 <version>${lagom.version}</version>
+                <configuration>
+                    <cassandraEnabled>false</cassandraEnabled>
+                    <kafkaEnabled>false</kafkaEnabled>
+                    <unmanagedServices>
+                        <cas_native>http://127.0.0.1:9042</cas_native>
+                    </unmanagedServices>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -86,4 +93,5 @@
 
         <lagom.version>1.4.6</lagom.version>
     </properties>
+
 </project>
