@@ -53,21 +53,21 @@ public class DemoServiceImplTest {
         assertEquals(userInfo, user1);
     }
 
-    @Test
-    public void shouldInvokeDeleteUser() throws Exception {
-
-        List<UserInfo> userInfo = new ArrayList<>();
-        // DemoService service = server.client(DemoService.class);
-        List<UserInfo> userDetails = new ArrayList<>();
-        userDetails.add(UserInfo.builder().userId(2).userName("bhawna")
-                .qualification("MCA")
-                .trackAssigned("stateroom")
-                .build());
-        System.out.println(userDetails);
-        List<UserInfo> user1 = service.deleteUser(2).invoke().toCompletableFuture().get(5, TimeUnit.SECONDS);
-        assertEquals(userInfo, user1);
-
-    }
+//    @Test
+//    public void shouldInvokeDeleteUser() throws Exception {
+//
+//        List<UserInfo> userInfo = new ArrayList<>();
+//        // DemoService service = server.client(DemoService.class);
+//        List<UserInfo> userDetails = new ArrayList<>();
+//        userDetails.add(UserInfo.builder().userId(2).userName("bhawna")
+//                .qualification("MCA")
+//                .trackAssigned("stateroom")
+//                .build());
+//        System.out.println(userDetails);
+//        List<UserInfo> user1 = service.deleteUser(2).invoke().toCompletableFuture().get(5, TimeUnit.SECONDS);
+//        assertEquals(userInfo, user1);
+//
+//    }
 
 
 }
