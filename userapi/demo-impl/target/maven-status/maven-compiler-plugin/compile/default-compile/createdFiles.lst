@@ -1,2 +1,1 @@
-edu/knoldus/demo/impl/DemoServiceImpl.class
-edu/knoldus/demo/impl/DemoModule.class
+edu/knoldus/demo/api/impl/DemoModule.class

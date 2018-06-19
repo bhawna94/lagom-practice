@@ -1,2 +1,2 @@
-/home/knoldus/Downloads/lagom-java-maven/userapi/demo-impl/src/main/java/edu/knoldus/demo/impl/DemoModule.java
-/home/knoldus/Downloads/lagom-java-maven/userapi/demo-impl/src/main/java/edu/knoldus/demo/impl/DemoServiceImpl.java
+/home/knoldus/Downloads/lagom-java-maven/userapi/demo-impl/src/main/java/edu/knoldus/demo/api/impl/DemoModule.java
+/home/knoldus/Downloads/lagom-java-maven/userapi/demo-impl/src/main/java/edu/knoldus/demo/api/impl/DemoServiceImpl.java

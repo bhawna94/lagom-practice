@@ -1,2 +1,2 @@
-/home/knoldus/Downloads/lagom-java-maven/userapi/demo-api/src/main/java/edu/knoldus/demo/api/UserInfo.java
-/home/knoldus/Downloads/lagom-java-maven/userapi/demo-api/src/main/java/edu/knoldus/demo/api/DemoService.java
+/home/knoldus/Downloads/lagom-java-maven/userapi/demo-api/src/main/java/edu/knoldus/demo/api/api/DemoService.java
+/home/knoldus/Downloads/lagom-java-maven/userapi/demo-api/src/main/java/edu/knoldus/demo/api/api/UserInfo.java
