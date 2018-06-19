@@ -20,17 +20,17 @@ public class DemoServiceImpl implements DemoService {
 
     private static List<UserInfo> userDetails = new ArrayList<>();
     private final CassandraSession cassandraSession;
-
-    private Pair<ResponseHeader, String> concatHeader(ResponseHeader responseHeader, String id) {
-       /* CompletableFuture<UserInfo> user = cassandraSession.selectOne("select * from user.userdetail where user_id =?", id).thenApply(
-                row -> (UserInfo.builder().userName(row.get().getString("username"))
-                        .qualification(row.get().getString("qualification"))
-                        .trackAssigned(row.get().getString("trackassigned")).build()
-                ));*/
-        cassandraSession.selectOne("select * from user.userdetail where user_id =?", id).thenApply(Function.identity());
-        System.out.println("------"+cassandraSession.selectOne("select * from user.userdetail where user_id =?", id).thenApply(return Function.identity()));
-        return Pair.create(responseHeader, "ayush" );
-    }
+//
+//    private Pair<ResponseHeader, String> concatHeader(ResponseHeader responseHeader, String id) {
+//       /* CompletableFuture<UserInfo> user = cassandraSession.selectOne("select * from user.userdetail where user_id =?", id).thenApply(
+//                row -> (UserInfo.builder().userName(row.get().getString("username"))
+//                        .qualification(row.get().getString("qualification"))
+//                        .trackAssigned(row.get().getString("trackassigned")).build()
+//                ));*/
+//        cassandraSession.selectOne("select * from user.userdetail where user_id =?", id).thenApply(Function.identity());
+//        System.out.println("------"+cassandraSession.selectOne("select * from user.userdetail where user_id =?", id).thenApply(return Function.identity()));
+//        return Pair.create(responseHeader, "ayush" );
+//    }
 
     @Inject
     public DemoServiceImpl(CassandraSession cassandraSession) {
@@ -68,16 +68,16 @@ public class DemoServiceImpl implements DemoService {
 
     }
 
-    @Override
-    public HeaderServiceCall<NotUsed, String> getUserHeaderCall() {
-        return (requestHeader, request) -> {
-            String id = requestHeader.getHeader("id").get();
-
-
-            return CompletableFuture.completedFuture(concatHeader(ResponseHeader.OK.withStatus(200), id));
-
-        };
-
-
-    }
+//    @Override
+//    public HeaderServiceCall<NotUsed, String> getUserHeaderCall() {
+//        return (requestHeader, request) -> {
+//            String id = requestHeader.getHeader("id").get();
+//
+//
+//            return CompletableFuture.completedFuture(concatHeader(ResponseHeader.OK.withStatus(200), id));
+//
+//        };
+//
+//
+//    }
 }
